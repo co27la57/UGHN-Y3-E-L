@@ -13,3 +13,6 @@
 # Python 缓存
 __pycache__/
 *.pyc
+
+# 文档生成流水线工作目录（中间产物，不入库）
+output/
