@@ -213,7 +213,7 @@
 
 **结构建议**：① 对齐哪几条 Roadmap 原则（净零 CO2、甲烷持续下降、资源管理/动物健康福利）；② ID-Coo 的设计证据（复用既有通道少土建、可更换传感器/控制箱/驱动不整套报废、电动驱动优先于空压机、能耗按每千次通行计）；③ 权衡（逐头停留增加等待与应激 vs 减少重复赶牛——试点比较）；④ 结论：若福利/通行负担恶化，回到 R10 改布局和流程。
 
-**证据已备**：Dairy Roadmap Climate Ambition PDF 在 `文献调研/ZfW6mX-...pdf`（今天已下载验证）。
+**证据已备**：Dairy Roadmap Climate Ambition PDF 在 `文献调研/乳业气候雄心报告_DairyRoadmap2021.pdf`（今天已下载验证）。
 **【待填】**：按四段写；"回头改设计"的结论必须明确（改/不改/改哪里）。
 
 **自查清单**：
@@ -247,8 +247,8 @@
 **硬性要求**：IEEE 数字编号；正文引用与文末列表一一对应；15–30 条。
 
 **拼稿前必办**：
-- [ ] 收录 **[26]** CIGR dairy housing（HF 体尺依据，本地 `文献调研/R51_CIGR_DairyHousing2015_HF_dimensions.pdf`，条目见成员4交接说明）
-- [ ] 修正 **[12]** 的 URL：Tru-Test 官网已迁移，原 webdam_assets 直链 404，改为 `https://us.tru-test.com/resources/xrp2-panel-reader-quickstart-guide-enesptfrde`（本地副本 `R52_TruTest_XRP2_Quickstart.pdf`）
+- [ ] 收录 **[26]** CIGR dairy housing（HF 体尺依据，本地 `文献调研/奶牛舍设计标准含荷斯坦体尺_CIGR2015.pdf`，条目见成员4交接说明）
+- [ ] 修正 **[12]** 的 URL：Tru-Test 官网已迁移，原 webdam_assets 直链 404，改为 `https://us.tru-test.com/resources/xrp2-panel-reader-quickstart-guide-enesptfrde`（本地副本 `XRP2读卡器快速指南_TruTest.pdf`）
 - [ ] 核对 [11] 产品页 URL 是否需换 livestock.tru-test.com 域名
 - [ ] 每条都能在正文中找到引用点；删除无引用条目
 

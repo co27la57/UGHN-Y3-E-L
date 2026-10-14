@@ -227,7 +227,7 @@ Measured per stage: confirmed-read accuracy and coverage separately, mis-diversi
 
 ## 11. Sustainable development
 
-> *Cadmus Step 12 · Member 5 · 10% · half a page (~250 words) · no figures · align with specific Dairy Roadmap principles + design-level technical evidence from §10 (e.g. capability boundaries in 10.2, electric drives and energy accounting in 10.3/10.7) + trade-offs + an explicit decision on whether to revise the technical description · evidence file: 文献调研/ZfW6mX-Dairy-Roadmap-Climate-Ambition-Final-Version.pdf*
+> *Cadmus Step 12 · Member 5 · 10% · half a page (~250 words) · no figures · align with specific Dairy Roadmap principles + design-level technical evidence from §10 (e.g. capability boundaries in 10.2, electric drives and energy accounting in 10.3/10.7) + trade-offs + an explicit decision on whether to revise the technical description · evidence file: 文献调研/乳业气候雄心报告_DairyRoadmap2021.pdf*
 
 [To be written by Member 5]
 
