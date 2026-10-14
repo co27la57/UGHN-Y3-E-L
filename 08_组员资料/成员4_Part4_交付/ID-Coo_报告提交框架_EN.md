@@ -137,7 +137,9 @@ UR1 acceptance reports confirmed-read accuracy and coverage separately: high acc
 
 Animals travel through a single-file race: holding area → gate G0 → buffer section A → gate G1 → detection section B → gate G2 → diversion area with gate D (Figure 1). Interlocked gates keep one animal at a time in the read zone. After reading, gate D selects one of two exits: the normal return channel, or the exception branch through pen gate H to the review pen. All animals leave B moving forward; D forms a guide boundary only and never pushes or squeezes an animal.
 
-Version 1 uses one buffer and one detection section; extra forward sections add waiting capacity, not throughput, and add gates and failure points. Adjustable commercial alleys (≈526–800 mm wide, 8 ft and 10 ft modules) indicate the structural envelope [13], [14]. Section length, clear width and antenna height follow CIGR standard dimensions for the target breed — adult Holstein–Friesian dairy cows: ≈1.44 m withers height, ≈1.75 m diagonal body length, ≈0.60 m chest width (650–749 kg) [26]; another breed later means re-parameterising the same table, not redesigning. Final dimensions, door swings and pen layout come from the on-farm survey, and module length is never assumed to equal one animal's length. (UR8, UR9)
+Version 1 uses one buffer and one detection section; extra forward sections add waiting capacity, not throughput, and add gates and failure points. Adjustable commercial alleys (≈526–800 mm wide, 8 ft and 10 ft modules) indicate the structural envelope [13], [14]. Section length, clear width and antenna height follow CIGR standard dimensions for the target breed — adult Holstein–Friesian dairy cows: ≈1.44 m withers height, ≈1.75 m diagonal body length, ≈0.60 m chest width (650–749 kg) [26]; another breed later means re-parameterising the same table, not redesigning. Final dimensions and door swings come from the on-farm survey, and module length is never assumed to equal one animal's length. (UR8, UR9)
+
+The review pen is a temporary holding area for manual verification, not a disease-isolation facility. It has an independent entry with anti-return control and a separate manual handling exit; gate H closes only after an animal has fully passed, and when the pen is full or the branch is blocked, intake stops and upstream pauses. Capacity follows C ≥ λq × th + Cm (anomaly rate × handling interval + margin) — an average-load relation that does not cover consecutive anomalies, so full-pen monitoring stays mandatory. The budget scenario reuses an existing pen of about six head; as a design floor, a sorting pen should hold at least one side of the milking parlour, with water, feed and lying space [26].
 
 ![Figure 1 — Race and diversion functional layout](figures/fig_R10_layout.png)
 
@@ -155,7 +157,7 @@ Six ultrasonic points (U-A, U-IN, U-B1, U-B2, U-N, U-Q) monitor occupancy and pa
 | Gates and diversion | Execute confirmed passage and exit choice | No diagnosis; no official identity decision |
 | Manual review | Checks tags, reconciles records | Never guesses identity from queue order [3] |
 
-Mechanical separation does not separate radio read zones: even with one animal in B, the antenna may pick up a neighbour's number, so read attribution is tested explicitly (10.7). A cracked tag housing with a working chip, or a missing non-electronic tag, lies outside automatic detection and needs visual inspection. (UR1–UR3, UR9)
+Mechanical separation does not separate radio read zones: even with one animal in B, the antenna may pick up a neighbour's number, so read attribution is tested explicitly (10.7). A cracked tag housing with a working chip, or a missing non-electronic tag, needs visual inspection. (UR1–UR3, UR9)
 
 ### 10.3 Control hardware, electrical and safety
 
@@ -221,7 +223,7 @@ The throughput target is 150 head/hour (≈24 s per animal for entry, door actio
 | RF and environment | Neighbour reads, steel structure, soiling, interference | Read zone and occupancy valid |
 | Farm pilot | Tasks, pen, maintenance, staff time | Efficiency and net benefit acceptable |
 
-Measured at each stage: confirmed-read accuracy and coverage separately, mis-diversion rate, exception-handling rate, exit consistency, takeover count and net labour time. Repeating the same herd is not an independent sample, and zero observed errors is not zero risk. Separation, read attribution and safe release are proven before economics; only then do scale-up or added automation follow. (UR1–UR10)
+Measured per stage: confirmed-read accuracy and coverage separately, mis-diversion and exception-handling rates, exit consistency, takeover count and net labour time. Repeating the same herd is not an independent sample, and zero observed errors is not zero risk; separation, read attribution and safe release are proven before economics. (UR1–UR10)
 
 ## 11. Sustainable development
 
