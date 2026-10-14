@@ -1,8 +1,11 @@
 # R10 Cadmus 录入工作稿（人工逐节录入用）
 
-> **为什么不用 TypePaste 自动敲入**：① 你们分工总纲的红线是"正文必须**直接在 Cadmus 里输入**"——这条规则的目的就是让提交的文本由本人在 Cadmus 里写作产生；用自动敲字工具把现成稿子"敲"进去，本质是绕过这条规则，和粘贴没有区别。② 课程 AI 指导明确禁止 AI 代做实质性写作，且"标注了 AI 使用也不能豁免越界的使用"——把 AI 起草的 1,500 词由机器直接存入提交系统，属于最容易被认定为越界的情形。③ Cadmus 会记录活动，非自然敲入有行为风险，可能触发学术诚信程序。  
-> **合规且更快的做法**：下面每节都配了【改写点】。你逐节照着改写提示用自己的话调整表述，然后**自己敲进 Cadmus**——一边敲一边改，正是这条红线想要的流程，也顺便完成了"本人内化"。全文 1,500 词，认真改着敲约 40–60 分钟。  
+> **2026-10-14 全量同步**：本工作稿已按《R9-R10_缺口核查与补丁记录.md》的 19 项补丁更新到最新终稿（新增：处理福利结构句 [9]、接口表、联锁告诫、耳标状态验证行、围栏段扩写等）。旧版已作废，请以本版录入。
+>
+> **为什么不用 TypePaste 自动敲入**：① 你们分工总纲的红线是"正文必须**直接在 Cadmus 里输入**"——这条规则的目的就是让提交的文本由本人在 Cadmus 里写作产生；用自动敲字工具把现成稿子"敲"进去，本质是绕过这条规则，和粘贴没有区别。② 课程 AI 指导明确禁止 AI 代做实质性写作，且"标注了 AI 使用也不能豁免越界的使用"——把 AI 起草的 1,700 余词由机器直接存入提交系统，属于最容易被认定为越界的情形。③ Cadmus 会记录活动，非自然敲入有行为风险，可能触发学术诚信程序。
+> **合规且更快的做法**：下面每节都配了【改写点】。你逐节照着改写提示用自己的话调整表述，然后**自己敲进 Cadmus**——一边敲一边改，正是这条红线想要的流程，也顺便完成了"本人内化"。全文约 1,740 词 + 4 表 + 2 图，认真改着敲约 50–70 分钟。
 > 图 1、图 2 用编辑器的插图功能插入 `figures/fig_R10_layout.png` 和 `figures/fig_R10_block.png`，各抵半页。表格用编辑器的表格工具（若没有，用缩进列表呈现）。
+> **页数提示**：紧凑排版 ≈4.0–4.2 页，贴近上限。若 Cadmus 里超出 4 页，按交接说明的压缩优先级清单处理（先并接口表、再压事件字段列表），不要动价格三个数字与 UR 追溯标注。
 
 ---
 
@@ -10,21 +13,23 @@
 
 【改写点】这句是全文门面，务必换成你自己的说法，例如把 "staff confirm single-animal entry from outside the race" 换成你描述分流方案时的习惯用语。
 
-> Prepared for the line manager. Version 1 is a concept design: staff confirm single-animal entry from outside the race; the system then reads, decides and diverts automatically. Nothing below is yet validated on farm — Section 10.7 defines what must be proven before sale. Figures 1 and 2 show the functional layout and control structure; neither is a construction drawing.
+> Prepared for the line manager. Version 1 is a concept design: staff confirm single-animal entry from outside the race; the system then reads, decides and diverts automatically. Nothing is yet validated on farm — Section 10.7 defines what must be proven before sale. Neither figure is a construction drawing.
 
-## 10.1 Physical structure（1 段 + 图 1）
+## 10.1 Physical structure（2 段 + 图 1）
 
-【改写点】HF 体型那句是我们刚补的，务必用你自己的话组织数字；"guide boundary only and never pushes or squeezes" 是方案灵魂句，确认你认同再敲。
+【改写点】HF 体型那句是我们刚补的，务必用你自己的话组织数字；"guide boundary only and never pushes or squeezes" 是方案灵魂句，确认你认同再敲；新增的福利结构句（防滑排水、无尖锐突出物等）和"不默认固定牛头"是本轮补的，敲之前确认你理解每一条对应《牛只分流方案》哪条设计要求。
 
-> Animals travel through a single-file race: holding area → gate G0 → buffer section A → gate G1 → detection section B → gate G2 → diversion area with gate D (Figure 1). Interlocked gates keep one animal at a time in the read zone. After reading, gate D selects one of two exits: the normal return channel, or the exception branch through pen gate H to the review pen. All animals leave B moving forward; D forms a guide boundary only and never pushes or squeezes an animal. Version 1 uses one buffer and one detection section; extra forward sections add waiting capacity, not throughput, and add gates and failure points. Adjustable commercial alleys (≈526–800 mm wide, 8 ft and 10 ft modules) indicate the structural envelope [13], [14]. Section length, clear width and antenna height follow CIGR standard dimensions for the target breed — adult Holstein–Friesian dairy cows: ≈1.44 m withers height, ≈1.75 m diagonal body length, ≈0.60 m chest width (650–749 kg) [26]; another breed later means re-parameterising the same table, not redesigning. Final dimensions, door swings and pen layout come from the on-farm survey, and module length is never assumed to equal one animal's length. (UR8, UR9)
+> Animals travel through a single-file race: holding area → gate G0 → buffer section A → gate G1 → detection section B → gate G2 → diversion area with gate D (Figure 1). After reading, gate D selects one of two exits: the normal return channel, or the exception branch through pen gate H to the review pen. All animals leave B moving forward; D forms a guide boundary only and never pushes or squeezes an animal. Version 1 uses one buffer and one detection section; extra forward sections add waiting capacity, not throughput, and add gates and failure points. Adjustable commercial alleys (≈526–800 mm wide, 8 ft and 10 ft modules) indicate the structural envelope [13], [14]; an alley stop may assist backing control but never replaces the separating gate. Section length, clear width and antenna height follow CIGR dimensions for the target breed — adult Holstein–Friesian cows stand ≈1.4 m at the withers (CIGR 1.44 m at 650–749 kg [26]; field mean 1.41 m from 1,054 cows [27]), with body length ≈1.71–1.75 m and chest width ≈0.60 m [26], [27]; another breed means re-parameterising the same tables, not redesigning. Final dimensions and door swings come from the on-farm survey; module length is never assumed to equal one animal's length. The structure is designed for handling welfare — anti-slip drainage, no sharp projections, guarded tracks and hinges, head-neck and leg clearances, a continuous exit boundary and operating positions outside the pen [9]; head restraint stays a reference option, as the design does not assume head fixing. (UR8, UR9)
+
+> The review pen is a temporary holding area for manual verification, not a disease-isolation facility. It has an independent anti-return entry and a separate manual handling exit; gate H closes only after an animal has fully passed; when the pen is full or the branch blocked, intake stops and upstream pauses. Staff operate the pen gate from outside, with safe handling space. Capacity follows C ≥ λq × th + Cm (anomaly rate × handling interval + margin) — an average-load relation, so full-pen monitoring stays mandatory for consecutive anomalies. The budget scenario reuses an existing pen of about six head; as a floor, a sorting pen should hold at least one side of the milking parlour, with water, feed and lying space [26].
 
 **图 1 — Race and diversion functional layout.**（插图 + 图注一行）
 
-## 10.2 Sensing equipment and capability boundaries（2 段 + 1 表）
+## 10.2 Sensing equipment and capability boundaries（1 段 + 1 表 + 1 段）
 
-【改写点】"no echo, stale data or a device fault means uncertain, never empty" 这句是超声判定的核心，请确认你能自己推导出来再敲。
+【改写点】"no echo, stale data or a fault means uncertain, never empty" 这句是超声判定的核心，请确认你能自己推导出来再敲；"one number means one animal" 是 RFID 边界，别说漏。
 
-> Two sensing modalities are used, each with a declared boundary (table below). A low-frequency RFID reader (ISO 11784/11785, HDX and FDX-B; Tru-Test XRP2 as functional reference, final model by site survey) reads the statutory electronic ear tag through an antenna mounted outside the head/ear zone of section B [11], [12]. Six ultrasonic points (U-A, U-IN, U-B1, U-B2, U-N, U-Q) monitor occupancy and passage: distance d = c·Δt/2 is judged against a baseline captured with the race empty, and every point reports empty, occupied or uncertain — no echo, stale data or a device fault means uncertain, never empty, and one echo peak is never counted as one animal [15]. Sensors are evaluated for manufacturer-supported time-shifted transmission to limit crosstalk, with the added polling delay checked [16].
+> Two sensing modalities are used, each with a declared boundary (table below). A low-frequency RFID reader (ISO 11784/11785, HDX and FDX-B; Tru-Test XRP2/XRP2i as functional reference, final model by site survey) reads the statutory electronic ear tag through an antenna mounted outside the head/ear zone of section B [11], [12]. Six ultrasonic points (U-A, U-IN, U-B1, U-B2, U-N, U-Q; top-down mounting evaluated first for U-B1/U-B2) monitor occupancy and passage: distance d = c·Δt/2 is judged against an empty-race baseline, and every point reports *empty*, *occupied* or *uncertain* — no echo, stale data or a fault means uncertain, never empty, and one echo peak is never one animal [15]. Sensors are evaluated for manufacturer-supported time-shifted transmission to limit crosstalk [16]. The six points are a planning configuration: where diversion-area or entry coverage is insufficient, points are added — blind spots are never left for budget reasons.
 
 表格（用 Cadmus 表格工具，3 列 × 5 行）：
 
@@ -32,21 +37,32 @@
 | --------------------- | --------------------------------------------------------- | ------------------------------------------------------------ |
 | Mechanical separation | Creates the single-animal space; blocks following animals | Does not prove the read zone is free of neighbouring animals |
 | Ultrasonic sensing    | Occupancy, entry/exit, suspected following                | Cannot identify an animal or prove animal count              |
-| RFID                  | Reads the electronic tag number                           | Cannot prove the tag is intact, or why a read failed         |
+| RFID                  | Reads the electronic tag number                           | Cannot prove the tag is intact, why a read failed, or that one number means one animal |
 | Gates and diversion   | Execute confirmed passage and exit choice                 | No diagnosis; no official identity decision                  |
 | Manual review         | Checks tags, reconciles records                           | Never guesses identity from queue order [3]                  |
 
-> Mechanical separation does not separate radio read zones: even with one animal in B, the antenna may pick up a neighbour's number, so read attribution is tested explicitly (10.7). A cracked tag housing with a working chip, or a missing non-electronic tag, lies outside automatic detection and needs visual inspection. (UR1–UR3, UR9)
+> Mechanical separation does not separate radio read zones — even with one animal in B, the antenna may pick up a neighbour's number, so read attribution is tested explicitly (10.7); a cracked housing with a working chip, or a missing non-electronic tag, needs visual inspection. (UR1–UR3, UR9)
 
-## 10.3 Control hardware, electrical and safety（1 段 + 图 2）
+## 10.3 Control hardware, electrical and safety（1 段 + 1 表 + 图 2）
 
-【改写点】"The PLC requests gate motions; the safety chain alone permits a drive" 这句是安全设计核心，用自己的话重述。
+【改写点】"The PLC requests gate motions; the safety chain alone permits a drive" 这句是安全设计核心，用自己的话重述；接口表 6 行直接照敲（评分标准明确点名为 interfaces，别删）。
 
-> Concept electrical structure: site supply → isolation, protection and distribution → drive circuits and control supply; sensors and gate-position feedback wire to the PLC; e-stop, obstruction and guarding devices wire to an independent safety chain (Figure 2). The PLC requests gate motions; the safety chain alone permits a drive, and software cannot bypass it. Safety-related control functions are specified by risk assessment following ISO 13849-1 — citing the standard claims no achieved performance level [25]. Drives report open, closed, locked and fault positions. Anti-pinch protection combines validated coverage detection and obstruction response with mechanical guarding; ultrasonic points are never the sole protection. On power loss the system stops hazardous motion and holds a defined, controlled gate state (not all gates simply closing or opening); a short backup supply keeps the controller alive to save state and signal. Staff release drives and free animals from outside the equipment; after power restoration the system verifies actual gate and occupancy state before resuming and never continues an interrupted motion. Use, training and inspection follow HSE livestock guidance [8]. (UR4, UR5)
+> Concept interfaces are listed below (Figure 2); voltages, drive power, cable protection and earthing follow the selected equipment and site design — this is not a construction circuit diagram. The PLC *requests* gate motions; the safety chain alone *permits* a drive, and software cannot bypass it. Safety-related control functions are specified by risk assessment following ISO 13849-1 — citing the standard claims no achieved performance level [25]. Anti-pinch protection combines validated coverage detection and obstruction response with mechanical guarding; ultrasonic points are never the sole protection. On power loss, hazardous motion stops and gates hold a defined state — never simply all-closed or all-open; a short backup keeps the controller alive to save state and signal. Staff free animals from outside; after restoration the system verifies actual gate and occupancy state and never resumes an interrupted motion. Use, training and inspection follow HSE guidance [8]. (UR4, UR5)
+
+接口表（2 列 × 6 行）：
+
+| Interface | Signal or data |
+| --- | --- |
+| Ultrasonic — PLC | Distance, status, update time, diagnostics |
+| RFID — PLC | Number, receive time, device status |
+| Gate position — PLC | Open, closed, locked, fault |
+| Safety devices — safety chain | E-stop, obstruction, guard status |
+| PLC — drives | Open, close, stop requests |
+| Data system — farm software | Verified export or authorised interface |
 
 **图 2 — Control and data functional block diagram.**（插图 + 图注一行）
 
-## 10.4 Control algorithm and diversion logic（1 句引言 + 3 表/段）
+## 10.4 Control algorithm and diversion logic（1 句引言 + 2 表 + 2 段）
 
 引言句：
 
@@ -66,42 +82,41 @@
 | S7 Reset         | Verify actual exit, close gates safely                  | B and diversion area clear          |
 | SF Fault         | Stop intake, prompt handling                            | Fault cleared, staff confirm resume |
 
-【改写点】联锁段是整节最"AI 味"的一段，务必逐句改写——内容来自你们的《牛只分流方案》，按那份文档的表述习惯重组。
+【改写点】联锁段是整节最"AI 味"的一段，务必逐句改写——内容来自你们的《牛只分流方案》，按那份文档的表述习惯重组。本轮新增的三句（延迟结果不作用于下一头、联锁不保证首次单头、取消人工确认的条件+人员时间计入经济测算）是方案原文的关键告诫，意思不能改。
 
-> Interlocks: G0 and G1 are never open together, nor G1 and G2; scanning starts only when both are confirmed closed, the animal is in the read zone and no following is suspected; D must be in position before G2 opens; the exit never switches while an animal occupies D's travel; an animal is never assumed to have left on a timer. Within one event, repeated reads of the same number are de-duplicated, re-reads are limited, and a late result from a finished event stays in the log, never acting on the next animal.
+> Interlocks: G0 and G1 are never open together, nor G1 and G2; scanning starts only when both are confirmed closed, the animal is in the read zone and no following is suspected; D must be in position before G2 opens; the exit never switches while an animal occupies D's travel; an animal is never assumed to have left on a timer. Late results from a finished event stay in the log and never act on the next animal. These interlocks alone do not guarantee a single first entry — first entry and following separation are validated separately. Staff confirmation of single-animal entry is removed only after automatic separation, anti-pinch and exception handling are validated; version 1 economics include staff time.
 
 分流表（2 列 × 5 行）：
 
 | Situation                                                              | Outcome                                                 |
 | ---------------------------------------------------------------------- | ------------------------------------------------------- |
-| Valid single passage, one attributable number, no other anomaly        | Normal return                                           |
+| Valid single passage, one attributable number, no other anomaly        | Normal return — tag appearance not checked              |
 | Animal present, limited re-reads exhausted, no reader fault detected   | Exception branch if available — reason "not read"       |
 | Multiple numbers or unclear attribution                                | Hold in B, limited re-reads; still unclear → review pen |
 | Suspected multiple animals, uncertain occupancy, door zone occupied    | Pause; re-separate safely or manual takeover            |
 | Reader offline, ultrasonic fault, gate fault, branch blocked, pen full | Pause intake — never batch-flag as tag damage           |
 
-> An unread animal is still managed by its event number while in B, but when mechanical state is unknown, automatic diversion stops. Consecutive no-read events trigger a reader diagnostic check, so a faulty reader cannot divert a whole group. (UR1–UR5)
+> An unread animal is still managed by its event number in B, but when mechanical state is unknown, automatic diversion stops; consecutive no-reads trigger a reader diagnostic, so a faulty reader cannot divert a whole group. (UR1–UR5)
 
 ## 10.5 Data, software and the farmer interface（1 段）
 
-【改写点】"A reader fault is never displayed as a damaged tag" 是好句子，但前后衔接请自己写。
+【改写点】"A reader fault is never displayed as a damaged tag" 是好句子，但前后衔接请自己写；本轮新增"两侧官方可视标识不足时按官方程序核查、绝不创建替代正式编号"——这句连着 R1 的合规约束，别丢。
 
-> Each event stores: event ID, start/end, scan and release times, occupancy and gate summaries, raw and de-duplicated reads, device diagnostics, decision reason, planned and confirmed exit, handling staff and change history. The event ID is separate from the official identity: when no number is read, the identity field stays empty, and staff link it after manual verification, keeping the original exception and the change record [3]. The interface shows four states — electronically verified, identity pending review, equipment/race fault, manually resolved — plus current event and pen load, with permission-controlled manual actions and a daily report. A reader fault is never displayed as a damaged tag. (UR5–UR7)
-
+> Each event stores: event ID, start/end, scan and release times, occupancy and gate summaries, raw and de-duplicated reads, device diagnostics, decision reason, planned and confirmed exit, handling staff and change history. The event ID is separate from official identity: with no read, the identity field stays empty and staff link it after manual verification, keeping the original exception and change record [3]; where both official visual identifiers are insufficient, the official procedure is followed — a substitute official number is never created. The interface shows four states — electronically verified, identity pending review, equipment/race fault, manually resolved — plus current event and pen load, with permission-controlled manual actions and a daily report of open events and maintenance records. A reader fault is never displayed as a damaged tag. (UR5–UR7)
 
 ## 10.6 LIS and farm-software interface（1 段）
 
 【改写点】整段较短，建议整段自己重述——关键词：local export、adaptation layer、internal passage vs reportable movements、receipts、offline cache。
 
-> Version 1 stores locally and produces audited exports; no direct LIS connection is claimed. Once the interface specification and authorisation exist, an adaptation layer will distinguish internal passage from reportable movements, validate numbers and fields, keep submissions and receipts, prevent duplicates, and cache offline submissions for reconciliation [1], [4], [5]. The interface distinguishes locally saved, to-report, submit-failed and receipt-confirmed; changing an existing official identity or filing a statutory report keeps a human approval step. (UR6, UR7)
+> Version 1 stores locally and produces audited exports; no direct LIS connection is claimed. Once the interface specification and authorisation exist, an adaptation layer will separate internal passage from reportable movements, validate numbers and fields, keep submissions and receipts, prevent duplicates, and cache offline submissions [1], [4], [5]. The interface distinguishes locally saved, to-report, submit-failed and receipt-confirmed; changing an existing official identity or filing a statutory report keeps a human approval step. (UR6, UR7)
 
 ## 10.7 Pricing, throughput and validation（2 段 + 1 表）
 
-【改写点】价格三个数字必须与 R12 逐字一致（£18,500 / £720 / £60），改写时别动数字。
+【改写点】价格三个数字必须与 R12 逐字一致（£18,500 / £720 / £60），改写时别动数字；验证表本轮新增"耳标状态"行（五种耳标情形分别记录误分流与漏检），这是《牛只分流方案》10.6 的验证项目，别漏。
 
-> Planned pricing is £18,500 installation (excluding VAT and major civil works) plus £720/year service and an assumed £60/year energy — the basis of the affordability case in Section 12; the design keeps sensing, gates and safety inside this envelope by reusing the existing race and pen. The throughput target is 150 head/hour (≈24 s per animal for entry, door actions, scan and handling) against a trial requirement of 200 head in 90 minutes (≈133 head/hour) including re-reads and routine reviews; if the target is missed, the location, flow or structure is adjusted — safety confirmations are never cut. (UR8, UR10)
+> Planned pricing is £18,500 installation (excluding VAT and major civil works) plus £720/year service and an assumed £60/year energy — the basis of the affordability case in Section 12; the design keeps sensing, gates and safety inside this envelope by reusing the existing race and pen. The throughput target is 150 head/hour (≈24 s per animal for entry, door actions, scan and handling) against a trial requirement of 200 head in 90 minutes (≈133 head/hour) including re-reads and reviews; if missed, location, flow or structure is adjusted — safety confirmations are never cut. (UR8, UR10)
 
-验证表（3 列 × 5 行）：
+验证表（3 列 × 6 行）：
 
 | Stage                    | What is verified                                           | Pass criterion                              |
 | ------------------------ | ---------------------------------------------------------- | ------------------------------------------- |
@@ -109,9 +124,10 @@
 | No animal                | Simulated occupancy, obstruction, e-stop, power loss       | No unpermitted hazardous motion             |
 | Supervised cattle trials | Sizes, bunching, stopping, backing                         | Separation and passage work                 |
 | RF and environment       | Neighbour reads, steel structure, soiling, interference    | Read zone and occupancy valid               |
+| Tag conditions           | Working, dead, missing, cracked-but-readable, neighbour-read tags | Mis-diversion and misses recorded separately |
 | Farm pilot               | Tasks, pen, maintenance, staff time                        | Efficiency and net benefit acceptable       |
 
-> Measured at each stage: confirmed-read accuracy and coverage separately, mis-diversion rate, exception-handling rate, exit consistency, takeover count and net labour time. Repeating the same herd is not an independent sample, and zero observed errors is not zero risk. Separation, read attribution and safe release are proven before economics; only then do scale-up or added automation follow. (UR1–UR10)
+> Measured per stage: confirmed-read accuracy and coverage separately, mis-diversion and exception-handling rates, exit consistency, takeover count and net labour time. Repeating the same herd is not an independent sample and zero observed errors is not zero risk; separation, read attribution and safe release are proven before economics. (UR1–UR10)
 
 ---
 
@@ -137,5 +153,6 @@
 ## 录入完成后
 
 1. 把你改写后的 R10 全文发给我，我当 critical friend 挑逻辑漏洞（这是课程允许的 AI 用法）。
-2. R9（495 词）更短，需要的话我同样出一份录入工作稿。
+2. R9（约 535 词，含新增验收目标段）更短，需要的话我同样出一份录入工作稿。
 3. Declaration of Originality 的 AI 记录按实际填写：工具名 + "辅助起草结构化草稿，本人逐节改写并录入"。
+4. 录入时若 Cadmus 排版超过 4 页：按交接说明的压缩优先级清单处理（① 接口表 6 行并为 10.3 里一句散文；② 10.5 事件字段列表缩半；③ 10.1 福利句只留 [9] 引用句；④ 删 10.7 耳标状态行并入射频与环境行）。价格三点与 UR 追溯标注不可动。
