@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# 内部工作笔记（不入远端仓库）
+.workbuddy/
+
+# 超过 GitHub 100MB 单文件限制的课程 PPT 压缩包（172MB）
+08_组员资料/E&L_PPT.zip
+
+# 课程讲义原件（版权材料 + 单文件最大 68MB，团队各自本地留存）
+08_组员资料/E&L_PPT/
+
+# Python 缓存
+__pycache__/
+*.pyc
