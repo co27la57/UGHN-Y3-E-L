@@ -377,7 +377,7 @@ PLC → 本地事件日志与农场主界面 → 农场软件：第一版可审�
 
 概念电气结构为场所供电经隔离、保护及配电进入驱动回路和控制电源；传感器与门位反馈接入 PLC，急停和保护装置接入独立于普通数据路径的安全相关控制。具体电压、驱动功率、线缆保护及接地方案须按所选设备和现场设计，不能以本框图代替施工电路图。
 
-安全相关控制按风险评估确定保护及所需性能，参考ISO 13849-1的方法；引用标准不表示已达到某性能等级。[25]
+安全相关控制按现场风险评估确定保护功能及所需性能，采用机械功能安全的通用设计方法；本章不声称达到某一性能等级。
 
 | 接口 | 信号或数据 |
 | --- | --- |
@@ -606,4 +606,3 @@ Defra的2024／25年度英格兰奶业农场平均Farm Business Income为153,800
 
 [24] The Dairy Roadmap, “On the farm: Carbon footprint and energy.” [Online]. Available: https://dairyroadmap.co.uk/on-the-farm/carbon-footprint-energy/
 
-[25] ISO, “ISO 13849-1:2023—Safety of machinery—Safety-related parts of control systems—Part 1: General principles for design,” 2023. [Online]. Available: https://www.iso.org/standard/73481.html

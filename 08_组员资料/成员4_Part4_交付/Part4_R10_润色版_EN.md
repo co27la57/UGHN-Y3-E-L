@@ -1,6 +1,6 @@
 # 10. Technical description of the solution
 
-> This is the Section 10 text in `ID-Coo_报告提交框架_EN_R9完成_R10四页版.docx`. The Word report is the submission version; reference numbers follow its IEEE list [1]–[26]. The five detailed matrices remain in `Part4_R10_Technical_Description_EN.md` as development notes.
+> This is the Section 10 text in `ID-Coo_报告提交框架_EN_R9完成_R10四页版.docx`. The Word report is the submission version; reference numbers follow its IEEE list [1]–[25]. The five detailed matrices remain in `Part4_R10_Technical_Description_EN.md` as development notes.
 
 ## 10.1 Physical structure
 
@@ -34,9 +34,9 @@ An antenna may read a neighbouring tag even when one cow occupies B. The trial m
 
 Figure 2 shows functional interfaces, not construction wiring. Voltage, drive rating, cable protection and earthing depend on the chosen equipment and site. The PLC sends motion requests directly to the gate drives. Separately, safety-related control monitors risk-assessed protection devices and can stop or inhibit the drives independently; software and data interfaces cannot bypass it. Site-selected enclosures, connectors and cables must withstand wash-down, ingress and corrosion; operation is checked after routine cleaning. (UR9)
 
-Safety functions and required performance levels follow a site risk assessment using ISO 13849-1 [24]; no achieved level is claimed. Mechanical guards and validated obstruction responses protect the gates. Ultrasonic points alone cannot provide anti-pinch protection.
+Safety functions and required performance levels follow a site risk assessment using general functional-safety methods; no achieved level is claimed. Mechanical guards and validated obstruction responses protect the gates. Ultrasonic points alone cannot provide anti-pinch protection.
 
-On power loss, hazardous movement stops and each gate holds a defined state; a short backup saves the event and signals the fault. Staff can release cattle from outside. On restart, the controller verifies gate positions and occupancy rather than resuming interrupted motion. Training and inspection follow HSE guidance [25]. (UR4, UR5)
+On power loss, hazardous movement stops and each gate holds a defined state; a short backup saves the event and signals the fault. Staff can release cattle from outside. On restart, the controller verifies gate positions and occupancy rather than resuming interrupted motion. Training and inspection follow HSE guidance [24]. (UR4, UR5)
 
 ![Figure 2 — Functional control, safety and data interfaces](figures/fig_R10_block.png)
 
@@ -62,7 +62,7 @@ The farmer interface distinguishes electronically verified, pending identity rev
 
 ## 10.6 LIS and farm-software interface
 
-Version 1 stores records locally and exports them for audit; direct LIS access is not assumed. If specifications and authorisation become available, an adapter will separate internal passages from reportable movements, validate fields, retain submissions and receipts, prevent duplicates, and reconcile after outages [1], [8], [26].
+Version 1 stores records locally and exports them for audit; direct LIS access is not assumed. If specifications and authorisation become available, an adapter will separate internal passages from reportable movements, validate fields, retain submissions and receipts, prevent duplicates, and reconcile after outages [1], [8], [25].
 
 The interface shows locally saved, pending, failed and receipt-confirmed states. Changes to official identity and statutory submissions require human approval. (UR6, UR7)
 
