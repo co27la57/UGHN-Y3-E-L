@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-16T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="id-coo-r10-control" name="Figure 2 Control safety data">
+    <mxGraphModel dx="1200" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="720" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ultrasonic" value="&lt;div style=&quot;font-size:18px;color:#185FA5;font-weight:bold;&quot;&gt;Ultrasonic sensing&lt;/div&gt;&lt;div style=&quot;height:13px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:14px;color:#1F2430;line-height:1.25;&quot;&gt;occupancy · health&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#E3EDF9;strokeColor=#185FA5;strokeWidth=2;fontColor=#1F2430;" vertex="1" parent="1">
+          <mxGeometry x="50" y="70" width="285" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="reader" value="&lt;div style=&quot;font-size:18px;color:#185FA5;font-weight:bold;&quot;&gt;LF RFID reader&lt;/div&gt;&lt;div style=&quot;height:13px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:14px;color:#1F2430;line-height:1.25;&quot;&gt;tag number · read time&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#E3EDF9;strokeColor=#185FA5;strokeWidth=2;fontColor=#1F2430;" vertex="1" parent="1">
+          <mxGeometry x="50" y="190" width="285" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="feedback" value="&lt;div style=&quot;font-size:18px;color:#185FA5;font-weight:bold;&quot;&gt;Gate feedback&lt;/div&gt;&lt;div style=&quot;height:13px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:14px;color:#1F2430;line-height:1.25;&quot;&gt;position · fault&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#E3EDF9;strokeColor=#185FA5;strokeWidth=2;fontColor=#1F2430;" vertex="1" parent="1">
+          <mxGeometry x="50" y="310" width="285" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="plc" value="&lt;div style=&quot;font-size:23px;color:#0F6E56;font-weight:bold;&quot;&gt;Passage PLC&lt;/div&gt;&lt;div style=&quot;height:28px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:16px;color:#1F2430;line-height:1.25;&quot;&gt;event ID &amp;amp; tag check&lt;br&gt;route · motion request&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#DCEFE7;strokeColor=#0F6E56;strokeWidth=2;fontColor=#1F2430;" vertex="1" parent="1">
+          <mxGeometry x="385" y="70" width="255" height="335" as="geometry" />
+        </mxCell>
+        <mxCell id="drives" value="&lt;div style=&quot;font-size:22px;color:#5F5E5A;font-weight:bold;&quot;&gt;Gate drives&lt;/div&gt;&lt;div style=&quot;height:20px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:16px;color:#1F2430;line-height:1.25;&quot;&gt;G0–G2 · D · H&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#F1EFE8;strokeColor=#5F5E5A;strokeWidth=2;fontColor=#1F2430;" vertex="1" parent="1">
+          <mxGeometry x="915" y="70" width="235" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="safety_devices" value="&lt;div style=&quot;font-size:17px;color:#993556;font-weight:bold;&quot;&gt;Safety devices&lt;/div&gt;&lt;div style=&quot;height:13px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:14px;color:#1F2430;line-height:1.25;&quot;&gt;E-stop · guards&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#FBE4EC;strokeColor=#993556;strokeWidth=2;fontColor=#1F2430;" vertex="1" parent="1">
+          <mxGeometry x="680" y="310" width="185" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="safety_control" value="&lt;div style=&quot;font-size:20px;color:#993556;font-weight:bold;&quot;&gt;Safety control&lt;/div&gt;&lt;div style=&quot;height:13px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:15px;color:#1F2430;line-height:1.25;&quot;&gt;stop / inhibit&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#FBE4EC;strokeColor=#993556;strokeWidth=2;fontColor=#1F2430;" vertex="1" parent="1">
+          <mxGeometry x="915" y="310" width="235" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="local" value="&lt;div style=&quot;font-size:19px;color:#185FA5;font-weight:bold;&quot;&gt;Local log + HMI&lt;/div&gt;&lt;div style=&quot;height:19px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:14px;color:#1F2430;line-height:1.25;&quot;&gt;audit · review&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#E3EDF9;strokeColor=#185FA5;strokeWidth=2;fontColor=#1F2430;" vertex="1" parent="1">
+          <mxGeometry x="385" y="525" width="255" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="farm" value="&lt;div style=&quot;font-size:18px;color:#5F5E5A;font-weight:bold;&quot;&gt;Farm software&lt;/div&gt;&lt;div style=&quot;height:20px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:14px;color:#1F2430;line-height:1.25;&quot;&gt;v1 export&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#F1EFE8;strokeColor=#5F5E5A;strokeWidth=2;fontColor=#1F2430;" vertex="1" parent="1">
+          <mxGeometry x="690" y="525" width="205" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="lis" value="&lt;div style=&quot;font-size:18px;color:#5F5E5A;font-weight:bold;&quot;&gt;Future LIS&lt;/div&gt;&lt;div style=&quot;height:20px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:14px;color:#1F2430;line-height:1.25;&quot;&gt;authorised only&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#FFFFFF;strokeColor=#5F5E5A;strokeWidth=2;fontColor=#1F2430;dashed=1;dashPattern=5 4;" vertex="1" parent="1">
+          <mxGeometry x="930" y="525" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="us_to_plc" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#185FA5;strokeWidth=2.3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.1429;entryDx=0;entryDy=0;startArrow=none;endArrow=block;endFill=1;" edge="1" parent="1" source="ultrasonic" target="plc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rfid_to_plc" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#185FA5;strokeWidth=2.3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;endArrow=block;endFill=1;" edge="1" parent="1" source="reader" target="plc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="feedback_to_plc" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#185FA5;strokeWidth=2.3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8571;entryDx=0;entryDy=0;startArrow=none;endArrow=block;endFill=1;" edge="1" parent="1" source="feedback" target="plc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="plc_to_drive" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1F2430;strokeWidth=2.3;exitX=1;exitY=0.18;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;endArrow=block;endFill=1;" edge="1" parent="1" source="plc" target="drives">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="device_to_safety" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#993556;strokeWidth=2.3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;endArrow=block;endFill=1;" edge="1" parent="1" source="safety_devices" target="safety_control">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="safety_to_drive" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#993556;strokeWidth=2.3;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=none;endArrow=block;endFill=1;" edge="1" parent="1" source="safety_control" target="drives">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="plc_to_local" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#185FA5;strokeWidth=2.3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=block;startFill=1;endArrow=block;endFill=1;" edge="1" parent="1" source="plc" target="local">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="local_to_farm" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1F2430;strokeWidth=2.3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;endArrow=block;endFill=1;" edge="1" parent="1" source="local" target="farm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="motion_label" value="motion requests" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=15;fontColor=#5B6472;" vertex="1" parent="1">
+          <mxGeometry x="680" y="96" width="190" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="safety_label" value="enable / inhibit" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontColor=#993556;" vertex="1" parent="1">
+          <mxGeometry x="875" y="232" width="150" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="event_label" value="events / operator I/O" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontColor=#185FA5;" vertex="1" parent="1">
+          <mxGeometry x="505" y="440" width="235" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="export_label" value="export" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontColor=#5B6472;" vertex="1" parent="1">
+          <mxGeometry x="650" y="485" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="future_label" value="later / separate interface" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontColor=#5B6472;" vertex="1" parent="1">
+          <mxGeometry x="920" y="482" width="235" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="scope_note" value="Functional concept only · Protective devices and required performance follow site risk assessment." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#5B6472;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="50" y="670" width="1070" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

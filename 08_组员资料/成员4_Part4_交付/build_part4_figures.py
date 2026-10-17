@@ -2,10 +2,10 @@
 """Part 4 (Member 4) deliverable figures for ID-Coo report.
 
 Fig 1: Physical layout of the handling race and diversion system (functional).
-Fig 2: Control and data functional block diagram.
+Fig 2: Functional control, safety and data interfaces.
 
 Style follows the team's build_figures.py conventions (light theme, dark ink).
-Output: PNG at 220 dpi into the same folder as this script.
+Output: high-resolution PNGs in the figures folder beside this script.
 """
 import os
 import matplotlib
@@ -188,78 +188,95 @@ def figure1():
 
 # ---------------------------------------------------------------- Figure 2
 def figure2():
-    fig, ax = new_ax(10.4, 5.6)
-    W = 100 * 5.6 / 10.4  # ~53.8 y-units
+    """Functional interfaces with process, protection and data paths separated."""
+    fig, ax = plt.subplots(figsize=(10.4, 6.3))
+    ax.set_xlim(0, 10.4)
+    ax.set_ylim(0, 6.3)
+    ax.axis("off")
 
-    # ---- input column (left)
-    inputs = [
-        ("Ultrasonic sensors", ["distance, status,", "update time,", "diagnostics"], BLUE, BLUE_S, 40.0),
-        ("LF RFID reader", ["tag ID, read time,", "device status"], BLUE, BLUE_S, 27.5),
-        ("Gate position feedback", ["open / closed,", "locked, fault"], BLUE, BLUE_S, 15.0),
-    ]
-    for title, lines, fill, edge, y in inputs:
-        box(ax, 2, y, 21, 10.5, fill, edge, title, lines, tfs=8.8, bfs=7.0)
+    def node(x, y, w, h, title, detail, fill, edge,
+             title_size=12.5, detail_size=10.2, dashed=False):
+        patch = FancyBboxPatch(
+            (x, y), w, h, boxstyle="round,pad=0,rounding_size=0.12",
+            linewidth=1.25, edgecolor=edge, facecolor=fill, zorder=2,
+            linestyle=(0, (4, 2)) if dashed else "-",
+        )
+        ax.add_patch(patch)
+        ax.text(x + w/2, y + h - 0.18, title, ha="center", va="top",
+                fontsize=title_size, fontweight="bold", color=edge, zorder=3)
+        detail_y = y + (h/2 - 0.08 if h > 2 else 0.17)
+        detail_va = "center" if h > 2 else "bottom"
+        ax.text(x + w/2, detail_y, detail, ha="center", va=detail_va,
+                fontsize=detail_size, color=INK, zorder=3, linespacing=1.28)
 
-    # safety devices (red-ish / pink) feeding safety chain directly
-    box(ax, 2, 2.5, 21, 9.5, PINK, PINK_S, "Safety devices",
-        ["e-stop, obstruction,", "guards"], tfs=8.8, bfs=7.0)
+    def link(start, end, color=INK, dashed=False, both=False, width=1.5):
+        ax.add_patch(FancyArrowPatch(
+            start, end, arrowstyle="<->" if both else "-|>",
+            mutation_scale=13, linewidth=width, color=color, zorder=1,
+            linestyle=(0, (4, 2)) if dashed else "-",
+            shrinkA=0, shrinkB=0,
+        ))
 
-    # ---- PLC (centre)
-    ax.add_patch(FancyBboxPatch((30.5, 14.0), 24, 30.5,
-                                boxstyle="round,pad=0,rounding_size=1.4",
-                                facecolor="#ffffff", edgecolor=INK, lw=1.6,
-                                zorder=2))
-    ax.text(42.5, 41.6, "Process controller (PLC)", ha="center", va="center",
-            fontsize=9.6, fontweight="bold", color=INK, zorder=3)
-    box(ax, 33, 22.5, 19, 15.0, TEAL, TEAL_S, "Passage state machine\n& event decision",
-        ["event ID per animal", "de-duplication, limited", "re-reads, diversion", "decision, interlocks"],
-        tfs=8.6, bfs=6.9)
-    ax.text(42.5, 16.6, "sensor I/O · drive requests", ha="center", va="center",
-            fontsize=6.8, color=MUTED, zorder=3, style="italic")
+    # Field inputs and process sequencing: none of these three ordinary
+    # signals is presented as a validated safety device.
+    input_x, input_w = 0.35, 2.55
+    for y, title, detail in (
+        (5.00, "Ultrasonic sensing", "occupancy · health"),
+        (3.97, "LF RFID reader", "tag number · read time"),
+        (2.94, "Gate feedback", "position · fault"),
+    ):
+        node(input_x, y, input_w, 0.92, title, detail, BLUE, BLUE_S,
+             title_size=12.2, detail_size=9.8)
+        link((2.90, y + 0.46), (3.40, y + 0.46), color=BLUE_S)
 
-    # ---- safety chain (right top)
-    box(ax, 62, 33.5, 20, 11.0, AMBER, AMBER_S, "Independent safety\ncontrol",
-        ["evaluates protection", "state alone"], tfs=8.8, bfs=7.0)
-    box(ax, 85, 33.5, 13, 11.0, GREY, GREY_S, "Gate drives",
-        ["G0–G2, D, H"], tfs=8.6, bfs=7.0)
+    node(3.40, 2.94, 2.25, 2.98, "Passage PLC",
+         "event ID & tag check\nroute · motion request",
+         TEAL, TEAL_S, title_size=14.0, detail_size=10.4)
+    node(8.05, 4.72, 2.00, 1.20, "Gate drives", "G0–G2 · D · H",
+         GREY, GREY_S, title_size=13.5, detail_size=10.8)
+    link((5.65, 5.32), (8.05, 5.32), color=INK, width=1.65)
+    ax.text(6.85, 5.56, "motion requests", ha="center", va="bottom",
+            fontsize=10.0, color=MUTED)
 
-    # ---- data / UI (right bottom)
-    box(ax, 62, 15.0, 36, 11.0, BLUE, BLUE_S, "Local records & farmer interface",
-        ["event log, status view,", "manual actions"], tfs=8.8, bfs=7.0)
-    box(ax, 62, 2.5, 36, 9.0, GREY, GREY_S, "Farm software / LIS",
-        ["audited export (v1);", "direct link after authorisation"], tfs=8.6, bfs=7.0)
+    # Separate safety-related path: its functions and performance are set by
+    # the site risk assessment.  It never passes through farm data software.
+    node(6.00, 2.94, 1.58, 0.92, "Safety devices",
+         "E-stop · guards", PINK, PINK_S,
+         title_size=10.2, detail_size=9.1)
+    node(8.05, 2.94, 2.00, 0.92, "Safety control",
+         "stop / inhibit", PINK, PINK_S,
+         title_size=11.4, detail_size=9.6)
+    link((7.58, 3.40), (8.05, 3.40), color=PINK_S, width=1.65)
+    link((9.05, 3.86), (9.05, 4.72), color=PINK_S, width=1.65)
+    ax.text(8.74, 4.32, "enable / inhibit", ha="right", va="center",
+            fontsize=9.2, color=PINK_S)
 
-    # ---- arrows
-    for _, _, y in [(0, 0, 45.2), (0, 0, 32.7), (0, 0, 20.2)]:
-        arrow(ax, 23.2, y, 30.3, 29.5 + (y - 32.7) * 0.55)
-    # safety devices -> safety control (hardwired), routed below the PLC
-    ax.add_patch(FancyArrowPatch((23.2, 7.2), (62.0, 38.5),
-                                 arrowstyle="-|>", mutation_scale=13,
-                                 linewidth=1.4, color=PINK_S, zorder=3,
-                                 linestyle=(0, (4, 2)), shrinkA=0, shrinkB=0,
-                                 connectionstyle="angle,angleA=0,angleB=90,rad=0"))
-    ax.text(40.0, 5.2, "hard-wired safety loop", fontsize=6.6, color=PINK_S,
-            ha="center", va="center", style="italic")
-    # PLC -> safety control (drive requests)
-    arrow(ax, 54.7, 36.0, 61.8, 38.5, lw=1.5)
-    ax.text(58.2, 40.8, "drive\nrequests", fontsize=6.4, color=MUTED,
-            ha="center", va="center", linespacing=1.25)
-    # safety control -> drives
-    arrow(ax, 82.2, 39.0, 84.8, 39.0, lw=1.5)
-    ax.text(83.5, 42.4, "drive\nenable", fontsize=6.4, color=MUTED,
-            ha="center", va="center", linespacing=1.25)
-    # PLC -> local records
-    arrow(ax, 54.7, 24.0, 61.8, 20.5, lw=1.5)
-    # local records -> farm software
-    arrow(ax, 80, 14.8, 80, 11.7, lw=1.5)
+    # Data and operator workflow.  The dashed LIS box is a future option,
+    # not a claimed version-1 connection.
+    node(3.40, 0.55, 2.25, 1.03, "Local log + HMI",
+         "audit · review", BLUE, BLUE_S,
+         title_size=12.0, detail_size=9.8)
+    node(6.15, 0.55, 1.80, 1.03, "Farm software",
+         "v1 export", GREY, GREY_S,
+         title_size=10.8, detail_size=9.8)
+    node(8.40, 0.55, 1.65, 1.03, "Future LIS",
+         "authorised only", "#ffffff", GREY_S,
+         title_size=11.0, detail_size=9.2, dashed=True)
+    link((4.53, 2.94), (4.53, 1.58), color=BLUE_S, both=True)
+    ax.text(4.77, 2.25, "events / operator I/O", ha="left",
+            va="center", fontsize=9.4, color=BLUE_S)
+    link((5.65, 1.06), (6.15, 1.06), color=INK)
+    ax.text(5.90, 1.78, "export", ha="center", va="bottom",
+            fontsize=9.2, color=MUTED)
+    ax.text(9.23, 1.78, "later / separate interface", ha="center", va="bottom",
+            fontsize=8.9, color=MUTED)
 
-    ax.text(2, 0.4, "Process control may request motion; only the independent safety "
-                    "chain permits a drive. Software cannot bypass the safety loop. "
-                    "Concept structure — not a construction circuit diagram.",
-            fontsize=6.8, color=MUTED, ha="left", va="bottom", style="italic")
+    ax.text(0.35, 0.18,
+            "Functional concept only · Protective devices and required performance follow site risk assessment.",
+            fontsize=9.4, color=MUTED, ha="left", va="center", style="italic")
 
-    fig.savefig(os.path.join(OUT, "fig_R10_block.png"), dpi=220,
-                bbox_inches="tight", facecolor="white")
+    fig.savefig(os.path.join(OUT, "fig_R10_block.png"), dpi=240,
+                bbox_inches="tight", pad_inches=0.10, facecolor="white")
     plt.close(fig)
 
 

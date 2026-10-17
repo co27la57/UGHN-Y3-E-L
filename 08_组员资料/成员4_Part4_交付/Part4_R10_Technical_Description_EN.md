@@ -19,7 +19,7 @@ The review pen is a temporary holding area for manual verification, not a diseas
 
 ### 10.2 Sensing equipment and capability boundaries
 
-Two sensing modalities are used, each with a declared boundary (table below). A low-frequency RFID reader (ISO 11784/11785, HDX and FDX-B; Tru-Test XRP2/XRP2i as functional reference, final model by site survey) reads the statutory electronic ear tag through an antenna mounted outside the head/ear zone of section B [11], [12]. Six ultrasonic points (U-A, U-IN, U-B1, U-B2, U-N, U-Q; top-down mounting evaluated first for U-B1/U-B2) monitor occupancy and passage: distance d = c·Δt/2 is judged against an empty-race baseline, and every point reports *empty*, *occupied* or *uncertain* — no echo, stale data or a fault means uncertain, never empty, and one echo peak is never one animal [15]. Sensors are evaluated for manufacturer-supported time-shifted transmission to limit crosstalk [16]. The six points are a planning configuration: where diversion-area or entry coverage is insufficient, points are added — blind spots are never left for budget reasons.
+Two sensing modalities are used, each with a declared boundary (table below). A low-frequency RFID reader (ISO 11784/11785, HDX and FDX-B; Tru-Test XRP2/XRP2i as functional reference, final model by site survey) reads LF EID tags where fitted through an antenna mounted outside the head/ear zone of section B [11], [12]. Cattle without a fitted LF EID tag require manual identity verification or an alternative workflow; no read alone does not establish tag damage. Six ultrasonic points (U-A, U-IN, U-B1, U-B2, U-N, U-Q; top-down mounting evaluated first for U-B1/U-B2) monitor occupancy and passage: distance d = c·Δt/2 is judged against an empty-race baseline, and every point reports *empty*, *occupied* or *uncertain* — no echo, stale data or a fault means uncertain, never empty, and one echo peak is never one animal [15]. Sensors are evaluated for manufacturer-supported time-shifted transmission to limit crosstalk [16]. The six points are a planning configuration: where diversion-area or entry coverage is insufficient, points are added — blind spots are never left for budget reasons.
 
 | Subsystem             | Function                                                  | Capability boundary                                          |
 | --------------------- | --------------------------------------------------------- | ------------------------------------------------------------ |
@@ -33,18 +33,20 @@ Mechanical separation does not separate radio read zones — even with one anima
 
 ### 10.3 Control hardware, electrical and safety
 
-Concept interfaces are listed below (Figure 2); voltages, drive power, cable protection and earthing follow the selected equipment and site design — this is not a construction circuit diagram. The PLC *requests* gate motions; the safety chain alone *permits* a drive, and software cannot bypass it. Safety-related control functions are specified by risk assessment following ISO 13849-1 — citing the standard claims no achieved performance level [25]. Anti-pinch protection combines validated coverage detection and obstruction response with mechanical guarding; ultrasonic points are never the sole protection. On power loss, hazardous motion stops and gates hold a defined state — never simply all-closed or all-open; a short backup keeps the controller alive to save state and signal. Staff free animals from outside; after restoration the system verifies actual gate and occupancy state and never resumes an interrupted motion. Use, training and inspection follow HSE guidance [8]. (UR4, UR5)
+Concept interfaces are listed below (Figure 2); voltages, drive power, cable protection and earthing follow the selected equipment and site design — this is not a construction circuit diagram. The PLC sends gate-motion requests directly to the drives. Separately, safety-related control monitors risk-assessed protection devices and can independently stop or inhibit the drives; software and data interfaces cannot bypass it. Safety functions and required performance are specified by site risk assessment following ISO 13849-1 — citing the standard claims no achieved performance level [25]. Anti-pinch protection combines validated coverage detection and obstruction response with mechanical guarding; ultrasonic points are never the sole protection. On power loss, hazardous motion stops and gates hold a defined state — never simply all-closed or all-open; a short backup keeps the controller alive to save state and signal. Staff free animals from outside; after restoration the system verifies actual gate and occupancy state and never resumes an interrupted motion. Use, training and inspection follow HSE guidance [8]. (UR4, UR5)
 
 | Interface | Signal or data |
 | --- | --- |
-| Ultrasonic — PLC | Distance, status, update time, diagnostics |
-| RFID — PLC | Number, receive time, device status |
-| Gate position — PLC | Open, closed, locked, fault |
-| Safety devices — safety chain | E-stop, obstruction, guard status |
-| PLC — drives | Open, close, stop requests |
-| Data system — farm software | Verified export or authorised interface |
+| Ultrasonic sensors → PLC | Distance, occupancy status, update time and diagnostics |
+| RFID reader → PLC | Tag number, receive time and device status |
+| Gate feedback → PLC | Open, closed and fault states; lock status if fitted |
+| Safety devices → safety-related control | Emergency stop, guarding and protective inputs selected by risk assessment |
+| PLC → gate drives | Open, close or stop motion requests |
+| Safety-related control → gate drives | Independent stop or inhibit |
+| PLC ↔ local log and HMI | Events and device status; authorised operator actions as process requests |
+| Local log and HMI → farm software | Audited export in version 1 |
 
-**Figure 2 — Control and data functional block diagram.**
+**Figure 2 — Functional control, safety and data interfaces**
 
 ### 10.4 Control algorithm and diversion logic
 
@@ -62,7 +64,7 @@ A rule-based state machine runs each passage as an independent event; no machine
 | S7 Reset         | Verify actual exit, close gates safely                  | B and diversion area clear          |
 | SF Fault         | Stop intake, prompt handling                            | Fault cleared, staff confirm resume |
 
-Interlocks: G0 and G1 are never open together, nor G1 and G2; scanning starts only when both are confirmed closed, the animal is in the read zone and no following is suspected; D must be in position before G2 opens; the exit never switches while an animal occupies D's travel; an animal is never assumed to have left on a timer. Late results from a finished event stay in the log and never act on the next animal. These interlocks alone do not guarantee a single first entry — first entry and following separation are validated separately. Staff confirmation of single-animal entry is removed only after automatic separation, anti-pinch and exception handling are validated; version 1 economics include staff time.
+Process interlocks: G0 and G1 are never open together, nor G1 and G2; scanning starts only when both are confirmed closed, the animal is in the read zone and no following is suspected; D must be in position before G2 opens; the exit never switches while an animal occupies D's travel; an animal is never assumed to have left on a timer. Late results from a finished event stay in the log and never act on the next animal. These process interlocks alone do not guarantee a single first entry — first entry and following separation are validated separately. Staff confirmation of single-animal entry is removed only after automatic separation, anti-pinch and exception handling are validated; version 1 economics include staff time.
 
 | Situation                                                              | Outcome                                                 |
 | ---------------------------------------------------------------------- | ------------------------------------------------------- |

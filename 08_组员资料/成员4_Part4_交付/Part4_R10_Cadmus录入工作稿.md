@@ -1,6 +1,6 @@
 # R10 Cadmus 录入工作稿（人工逐节录入用）
 
-> **2026-10-14 全量同步**：本工作稿已按《R9-R10_缺口核查与补丁记录.md》的 19 项补丁更新到最新终稿（新增：处理福利结构句 [9]、接口表、联锁告诫、耳标状态验证行、围栏段扩写等）。旧版已作废，请以本版录入。
+> **2026-10-16 图 2 与接口同步**：本工作稿已按最新控制、安全和数据功能图更新相关段落及接口表；保留原有的课程草稿引用编号，录入前应与最终报告的统一编号核对。
 >
 > **为什么不用 TypePaste 自动敲入**：① 你们分工总纲的红线是"正文必须**直接在 Cadmus 里输入**"——这条规则的目的就是让提交的文本由本人在 Cadmus 里写作产生；用自动敲字工具把现成稿子"敲"进去，本质是绕过这条规则，和粘贴没有区别。② 课程 AI 指导明确禁止 AI 代做实质性写作，且"标注了 AI 使用也不能豁免越界的使用"——把 AI 起草的 1,700 余词由机器直接存入提交系统，属于最容易被认定为越界的情形。③ Cadmus 会记录活动，非自然敲入有行为风险，可能触发学术诚信程序。
 > **合规且更快的做法**：下面每节都配了【改写点】。你逐节照着改写提示用自己的话调整表述，然后**自己敲进 Cadmus**——一边敲一边改，正是这条红线想要的流程，也顺便完成了"本人内化"。全文约 1,740 词 + 4 表 + 2 图，认真改着敲约 50–70 分钟。
@@ -27,9 +27,9 @@
 
 ## 10.2 Sensing equipment and capability boundaries（1 段 + 1 表 + 1 段）
 
-【改写点】"no echo, stale data or a fault means uncertain, never empty" 这句是超声判定的核心，请确认你能自己推导出来再敲；"one number means one animal" 是 RFID 边界，别说漏。
+【改写点】"no echo, stale data or a fault means uncertain, never empty" 这句是超声判定的核心；同时说清电子耳标只在已佩戴时可自动读取，未佩戴者须人工核对或走替代流程，且"one number means one animal" 不是有效推断。
 
-> Two sensing modalities are used, each with a declared boundary (table below). A low-frequency RFID reader (ISO 11784/11785, HDX and FDX-B; Tru-Test XRP2/XRP2i as functional reference, final model by site survey) reads the statutory electronic ear tag through an antenna mounted outside the head/ear zone of section B [11], [12]. Six ultrasonic points (U-A, U-IN, U-B1, U-B2, U-N, U-Q; top-down mounting evaluated first for U-B1/U-B2) monitor occupancy and passage: distance d = c·Δt/2 is judged against an empty-race baseline, and every point reports *empty*, *occupied* or *uncertain* — no echo, stale data or a fault means uncertain, never empty, and one echo peak is never one animal [15]. Sensors are evaluated for manufacturer-supported time-shifted transmission to limit crosstalk [16]. The six points are a planning configuration: where diversion-area or entry coverage is insufficient, points are added — blind spots are never left for budget reasons.
+> Two sensing modalities are used, each with a declared boundary (table below). A low-frequency RFID reader (ISO 11784/11785, HDX and FDX-B; Tru-Test XRP2/XRP2i as functional reference, final model by site survey) reads LF EID tags where fitted through an antenna mounted outside the head/ear zone of section B [11], [12]. Cattle without a fitted LF EID tag require manual identity verification or an alternative workflow; no read alone does not establish tag damage. Six ultrasonic points (U-A, U-IN, U-B1, U-B2, U-N, U-Q; top-down mounting evaluated first for U-B1/U-B2) monitor occupancy and passage: distance d = c·Δt/2 is judged against an empty-race baseline, and every point reports *empty*, *occupied* or *uncertain* — no echo, stale data or a fault means uncertain, never empty, and one echo peak is never one animal [15]. Sensors are evaluated for manufacturer-supported time-shifted transmission to limit crosstalk [16]. The six points are a planning configuration: where diversion-area or entry coverage is insufficient, points are added — blind spots are never left for budget reasons.
 
 表格（用 Cadmus 表格工具，3 列 × 5 行）：
 
@@ -45,22 +45,24 @@
 
 ## 10.3 Control hardware, electrical and safety（1 段 + 1 表 + 图 2）
 
-【改写点】"The PLC requests gate motions; the safety chain alone permits a drive" 这句是安全设计核心，用自己的话重述；接口表 6 行直接照敲（评分标准明确点名为 interfaces，别删）。
+【改写点】图 2 的两条驱动路径要分开说明：PLC 发送门动作请求，安全相关控制按现场风险评估独立停止或禁止驱动。接口表列出 8 项；本地日志与界面向农场软件作可审计导出，未来 LIS 接口只在 10.6 节作为获授权后的可能方案。
 
-> Concept interfaces are listed below (Figure 2); voltages, drive power, cable protection and earthing follow the selected equipment and site design — this is not a construction circuit diagram. The PLC *requests* gate motions; the safety chain alone *permits* a drive, and software cannot bypass it. Safety-related control functions are specified by risk assessment following ISO 13849-1 — citing the standard claims no achieved performance level [25]. Anti-pinch protection combines validated coverage detection and obstruction response with mechanical guarding; ultrasonic points are never the sole protection. On power loss, hazardous motion stops and gates hold a defined state — never simply all-closed or all-open; a short backup keeps the controller alive to save state and signal. Staff free animals from outside; after restoration the system verifies actual gate and occupancy state and never resumes an interrupted motion. Use, training and inspection follow HSE guidance [8]. (UR4, UR5)
+> Concept interfaces are listed below (Figure 2); voltages, drive power, cable protection and earthing follow the selected equipment and site design — this is not a construction circuit diagram. The PLC sends gate-motion requests directly to the drives. Separately, safety-related control monitors risk-assessed protection devices and can independently stop or inhibit the drives; software and data interfaces cannot bypass it. Safety functions and required performance are specified by site risk assessment following ISO 13849-1 — citing the standard claims no achieved performance level [25]. Anti-pinch protection combines validated coverage detection and obstruction response with mechanical guarding; ultrasonic points are never the sole protection. On power loss, hazardous motion stops and gates hold a defined state — never simply all-closed or all-open; a short backup keeps the controller alive to save state and signal. Staff free animals from outside; after restoration the system verifies actual gate and occupancy state and never resumes an interrupted motion. Use, training and inspection follow HSE guidance [8]. (UR4, UR5)
 
-接口表（2 列 × 6 行）：
+接口表（2 列 × 8 项接口）：
 
 | Interface | Signal or data |
 | --- | --- |
-| Ultrasonic — PLC | Distance, status, update time, diagnostics |
-| RFID — PLC | Number, receive time, device status |
-| Gate position — PLC | Open, closed, locked, fault |
-| Safety devices — safety chain | E-stop, obstruction, guard status |
-| PLC — drives | Open, close, stop requests |
-| Data system — farm software | Verified export or authorised interface |
+| Ultrasonic sensors → PLC | Distance, occupancy status, update time and diagnostics |
+| RFID reader → PLC | Tag number, receive time and device status |
+| Gate feedback → PLC | Open, closed and fault states; lock status if fitted |
+| Safety devices → safety-related control | Emergency stop, guarding and protective inputs selected by risk assessment |
+| PLC → gate drives | Open, close or stop motion requests |
+| Safety-related control → gate drives | Independent stop or inhibit |
+| PLC ↔ local log and HMI | Events and device status; authorised operator actions as process requests |
+| Local log and HMI → farm software | Audited export in version 1 |
 
-**图 2 — Control and data functional block diagram.**（插图 + 图注一行）
+**图 2 — Functional control, safety and data interfaces**（插图 + 图注一行）
 
 ## 10.4 Control algorithm and diversion logic（1 句引言 + 2 表 + 2 段）
 
@@ -82,9 +84,9 @@
 | S7 Reset         | Verify actual exit, close gates safely                  | B and diversion area clear          |
 | SF Fault         | Stop intake, prompt handling                            | Fault cleared, staff confirm resume |
 
-【改写点】联锁段是整节最"AI 味"的一段，务必逐句改写——内容来自你们的《牛只分流方案》，按那份文档的表述习惯重组。本轮新增的三句（延迟结果不作用于下一头、联锁不保证首次单头、取消人工确认的条件+人员时间计入经济测算）是方案原文的关键告诫，意思不能改。
+【改写点】这里列的是通行顺序的**过程联锁**，不能将其表述成已经验证的安全功能。保留三项关键意思：延迟结果不作用于下一头；过程联锁不保证首次单头；取消人工确认前要验证自动分隔、防夹与异常处理，并计入人员时间。
 
-> Interlocks: G0 and G1 are never open together, nor G1 and G2; scanning starts only when both are confirmed closed, the animal is in the read zone and no following is suspected; D must be in position before G2 opens; the exit never switches while an animal occupies D's travel; an animal is never assumed to have left on a timer. Late results from a finished event stay in the log and never act on the next animal. These interlocks alone do not guarantee a single first entry — first entry and following separation are validated separately. Staff confirmation of single-animal entry is removed only after automatic separation, anti-pinch and exception handling are validated; version 1 economics include staff time.
+> Process interlocks: G0 and G1 are never open together, nor G1 and G2; scanning starts only when both are confirmed closed, the animal is in the read zone and no following is suspected; D must be in position before G2 opens; the exit never switches while an animal occupies D's travel; an animal is never assumed to have left on a timer. Late results from a finished event stay in the log and never act on the next animal. These process interlocks alone do not guarantee a single first entry — first entry and following separation are validated separately. Staff confirmation of single-animal entry is removed only after automatic separation, anti-pinch and exception handling are validated; version 1 economics include staff time.
 
 分流表（2 列 × 5 行）：
 
@@ -155,4 +157,4 @@
 1. 把你改写后的 R10 全文发给我，我当 critical friend 挑逻辑漏洞（这是课程允许的 AI 用法）。
 2. R9（约 535 词，含新增验收目标段）更短，需要的话我同样出一份录入工作稿。
 3. Declaration of Originality 的 AI 记录按实际填写：工具名 + "辅助起草结构化草稿，本人逐节改写并录入"。
-4. 录入时若 Cadmus 排版超过 4 页：按交接说明的压缩优先级清单处理（① 接口表 6 行并为 10.3 里一句散文；② 10.5 事件字段列表缩半；③ 10.1 福利句只留 [9] 引用句；④ 删 10.7 耳标状态行并入射频与环境行）。价格三点与 UR 追溯标注不可动。
+4. 录入时若 Cadmus 排版超过 4 页：按交接说明的压缩优先级清单处理（① 先精简 10.3 接口表措辞和行距；若必须改为正文，仍明确写出“PLC→门驱动”“保护装置→安全控制”“安全控制→门驱动”三条接口；② 10.5 事件字段列表缩半；③ 10.1 福利句只留 [9] 引用句；④ 删 10.7 耳标状态行并入射频与环境行）。价格三点与 UR 追溯标注不可动。

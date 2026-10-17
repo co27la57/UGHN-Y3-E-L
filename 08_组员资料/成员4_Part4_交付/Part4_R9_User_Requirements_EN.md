@@ -1,31 +1,20 @@
-# R9 — User requirements and justifications (final, EN)
+# R9 — User requirements and justifications
 
-> 组员4（Part 4）交付物 · 依据 `08_组员资料/ID-Coo_项目要求与五人分工.md` 与 `牛只分流方案(1).md`  
-> Cadmus Step 10 ｜ 10% ｜ 篇幅上限 1 页（≈500 词）｜ MoSCoW 全部 Must have  
-> 引用编号沿用团队参考文献表 R13（[1]–[25]），未新增文献。
+> Member 4 · Section 9 · up to one page · ten MoSCoW Must have requirements. This text matches Section 9 of `ID-Coo_报告提交框架_EN_R9完成_R10四页版.docx`. Reference numbers follow that Word file’s IEEE list [1]–[26].
 
 ## 9. User requirements and justifications
 
-These ten requirements state what ID-Coo must do for the target farm — user needs, not design solutions: what must be achieved, not how (Section 10). Each is justified individually and traced to the constraints of Section 1, the consequences of Section 2 and the jobs, pains and gains of Section 3. All are **Must have** under MoSCoW: each is a precondition of the value proposition and cannot be traded away in version 1.
+Section 8 identifies reliable identity attribution, clear exception outcomes, safe handling, local continuity, maintainability and measurable value as the attributes customers need. The following ten user requirements state the outcomes the product/service must deliver. Each is a MoSCoW Must have; Section 10 describes the proposed design.
 
-| #    | User requirement (what the system must do)                                                    | Justification and traceability                                                                                                                                                                  |
-| ---- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| UR1  | Confirm the identity of every animal that carries a compatible, working electronic ear tag    | Mis-bound records corrupt treatment, yield and breeding data and weaken milk-buyer controls (§2); reliable identity is the customer's core gain (§3)                             |
-| UR2  | Hold every animal whose identity cannot be confirmed in a managed review process              | Tags are lost, damaged or unreadable (19.8% cumulative over five years [6]); an unidentified animal must not re-enter the herd silently or be logged under a guessed identity                 |
-| UR3  | Never process two or more animals passing together as a single animal                         | Cows bunch through gates and can yield two IDs at once; binding a neighbour's number to the current animal directly causes misidentification (§2)                                 |
-| UR4  | Let staff operate, stop and safely take over the system from outside the race                 | Cattle handling carries injury and stress risk [8]; version 1 depends on staff confirming single-animal entry, making external control a precondition of safe use                                |
-| UR5  | Keep every reading bound to the animal that produced it, and confirm the exit actually taken  | A delayed result must never act on the next animal, nor a correct reading divert the wrong cow — documented failure paths (§2)                                              |
-| UR6  | Preserve passage and exception records when the network is unavailable                        | Farm connectivity is unreliable; records must survive outages so verification and reporting complete later (§3: scattered records)                                                      |
-| UR7  | Provide auditable identity, time and outcome records without misreporting legal movements     | Statutory duties include updating the holding register within 36 hours and reporting movements within 3 days [4], [5]; internal race passage is never filed as a farm movement |
-| UR8  | Handle the agreed throughput without unacceptable queuing                                     | Smooth passage is a stated customer job (§3); the trial target is 200 head within 90 minutes, counting re-reads and reviews                                                     |
-| UR9  | Keep operating in the farm environment — wet, dirty, cold, corrosive — after routine cleaning | Robustness, reliability and maintainability in the actual barn are stated requirements (§1); equipment must suit real conditions, not only the laboratory                               |
-| UR10 | Match total cost of ownership with verified economic benefit                                  | Affordability is a stated requirement: price justified by value for money, evidenced by measured not claimed labour savings (§12)                                               |
+1. **UR1 (Must have).** The system must link each passage to the correct cow when a valid electronic identifier is available. A wrong identity can corrupt treatment and herd records, making reliable attribution essential to the problem defined in Section 2.
+2. **UR2 (Must have).** The system must leave unconfirmed identity unresolved and make the case available for safe staff review, pausing intake if review cannot continue. Tags can be lost or unreadable [3], [6]; a guessed identity would recreate the original record error.
+3. **UR3 (Must have).** The system must not record cattle passing together or closely following as one confirmed animal. Otherwise a neighbouring identifier could be attributed to the wrong cow, undermining the identity assurance required in Section 8.
+4. **UR4 (Must have).** Staff must be able to operate, stop and take over the process without entering the cattle path. Cattle handling presents injury risks [25], so external control is needed for routine use.
+5. **UR5 (Must have).** The system must keep each identity decision attached to the correct passage and confirm the exit actually taken. A late reading or incorrect route could otherwise leave an apparently complete but false event record.
+6. **UR6 (Must have).** The service must continue essential identity checks and preserve passage and exception records during network outages. Farm handling cannot depend on continuous connectivity, and lost records would prevent later review.
+7. **UR7 (Must have).** The service must provide auditable identity, time, exception and route records while distinguishing internal passages from reportable cattle movements. Farmers need usable evidence without mistaking on-farm sorting for a statutory movement [8], [26].
+8. **UR8 (Must have).** The service must process 200 cattle within 90 minutes in the pilot, including repeated reads and reviews, without excessive queuing. Otherwise the checks would delay normal handling; Section 8 identifies per-head processing as a possible bottleneck.
+9. **UR9 (Must have).** The system must remain dependable after routine cleaning and allow faults to be recognised and resolved without prolonged downtime in wet, dirty farm conditions. Frequent interruptions would make daily use impractical.
+10. **UR10 (Must have).** The installed product and ongoing service must provide a measurable net benefit relative to total ownership cost. Farms need to justify the investment through actual labour savings and operating costs, as Section 8 notes.
 
-Acceptance targets are preliminary. UR1: confirmed-read accuracy ≥99.5%, with coverage reported separately — accuracy on confirmed reads alone does not demonstrate adequate identification while many animals remain unresolved. UR2–UR4: every test ends in a review or safe-pause outcome. UR5: planned and actual exits recorded; no silent exceptions. UR6: records complete after outage recovery. UR7: exports carry identity, time and outcome; internal passage is never auto-filed. UR8: the 200-head/90-minute trial. UR9: operation after routine cleaning, with cable protection and maintenance checks. UR10: payback re-evaluated on quoted costs and net savings.
-
----
-
-**字数核对**：正文约 535 词（含表格与新增验收目标段；表格文字密实，1 页内可容）。  
-**MoSCoW**：10/10 全部 Must have；无 Could/Should。  
-**追溯**：UR1→§2/§3；UR2→\[6]；UR3→§2；UR4→\[8]；UR5→§2；UR6→§3；UR7→\[4\]\[5]；UR8→§3；UR9→§1；UR10→§12。  
-**验收**：见末段（初步目标，随报价与试验修订）。
+Section 10 describes the design response and validation.
