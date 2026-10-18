@@ -29,7 +29,7 @@
         <mxCell id="local" value="&lt;div style=&quot;font-size:19px;color:#185FA5;font-weight:bold;&quot;&gt;Local log + HMI&lt;/div&gt;&lt;div style=&quot;height:19px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:14px;color:#1F2430;line-height:1.25;&quot;&gt;audit · review&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#E3EDF9;strokeColor=#185FA5;strokeWidth=2;fontColor=#1F2430;" vertex="1" parent="1">
           <mxGeometry x="385" y="525" width="255" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="farm" value="&lt;div style=&quot;font-size:18px;color:#5F5E5A;font-weight:bold;&quot;&gt;Farm software&lt;/div&gt;&lt;div style=&quot;height:20px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:14px;color:#1F2430;line-height:1.25;&quot;&gt;v1 export&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#F1EFE8;strokeColor=#5F5E5A;strokeWidth=2;fontColor=#1F2430;" vertex="1" parent="1">
+        <mxCell id="farm" value="&lt;div style=&quot;font-size:18px;color:#5F5E5A;font-weight:bold;&quot;&gt;Farm software&lt;/div&gt;&lt;div style=&quot;height:20px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:14px;color:#1F2430;line-height:1.25;&quot;&gt;export (v1)&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#F1EFE8;strokeColor=#5F5E5A;strokeWidth=2;fontColor=#1F2430;" vertex="1" parent="1">
           <mxGeometry x="690" y="525" width="205" height="110" as="geometry" />
         </mxCell>
         <mxCell id="lis" value="&lt;div style=&quot;font-size:18px;color:#5F5E5A;font-weight:bold;&quot;&gt;Future LIS&lt;/div&gt;&lt;div style=&quot;height:20px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:14px;color:#1F2430;line-height:1.25;&quot;&gt;authorised only&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=6;fillColor=#FFFFFF;strokeColor=#5F5E5A;strokeWidth=2;fontColor=#1F2430;dashed=1;dashPattern=5 4;" vertex="1" parent="1">
@@ -74,9 +74,7 @@
         <mxCell id="future_label" value="later / separate interface" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontColor=#5B6472;" vertex="1" parent="1">
           <mxGeometry x="920" y="482" width="235" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="scope_note" value="Functional concept only · Protective devices and required performance follow site risk assessment." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#5B6472;fontStyle=2;" vertex="1" parent="1">
-          <mxGeometry x="50" y="670" width="1070" height="30" as="geometry" />
-        </mxCell>
+        
       </root>
     </mxGraphModel>
   </diagram>

@@ -6,7 +6,7 @@
 
 ID-Coo uses a single-file race: holding area → gate G0 → buffer A → gate G1 → detection section B → gate G2. Gate D then directs the cow either back to the herd or, through gate H, into the review pen (Figure 1). Both exits lead forward; D guides rather than pushes the animal.
 
-Version 1 has one buffer and one detection section. More upstream sections would add waiting space, not speed to the read-and-divert cycle, while adding gates and faults. Adjustable alleys about 526–800 mm wide, with 8 ft and 10 ft modules, indicate a structural envelope [16], [17]. A backing stop may help with reversal but cannot replace the separating gate.
+ID-Coo has one buffer and one detection section. More upstream sections would add waiting space, not speed to the read-and-divert cycle, while adding gates and faults. Adjustable alleys about 526–800 mm wide, with 8 ft and 10 ft modules, indicate a structural envelope [16], [17]. A backing stop may help with reversal but cannot replace the separating gate.
 
 CIGR gives a 650–749 kg Holstein–Friesian cow a withers height of 1.44 m, body length of 1.75 m and chest width of 0.60 m [18]. A field study of 1,054 cows reports a mean withers height of 1.411 m and trunk length of 1.708 m [19]. These guide section length, clear width and antenna height. A farm survey must confirm final dimensions and gate swings; a standard module does not necessarily hold one cow. Other breeds require a fresh dimensional check.
 
@@ -44,11 +44,11 @@ On power loss, hazardous movement stops and each gate holds a defined state; a s
 
 ## 10.4 Control algorithm and diversion logic
 
-A rule-based state machine handles each passage separately; version 1 needs no machine learning. Staff confirm one cow in A, after which the controller admits her to B, reads the tag, sets the exit and confirms the route taken.
+A rule-based state machine handles each passage separately; Version 1 needs no machine learning. Staff confirm one cow in A, after which the controller admits her to B, reads the tag, sets the exit and confirms the route taken.
 
 Process interlocks keep G0/G1 and G1/G2 from opening together. Scanning requires both B gates closed, a cow in the read zone and no suspected follower. D must be positioned before G2 opens and cannot move while its path is occupied. Sensors and gate feedback confirm exit; a timer alone cannot.
 
-Late reads remain with their original event and cannot redirect the next cow. Process interlocks do not prove safe first entry, so version 1 retains staff confirmation and counts that time in its economics. Automatic entry requires prior validation of separation, anti-pinch protection and exception handling.
+Late reads remain with their original event and cannot redirect the next cow. Process interlocks do not prove safe first entry, so Version 1 retains staff confirmation and counts that time in its economics. Automatic entry requires prior validation of separation, anti-pinch protection and exception handling.
 
 An unread cow retains an event ID while in B. Uncertain mechanical state stops automatic diversion; consecutive no-reads trigger reader diagnostics before a whole group can be misdirected. (UR1–UR5)
 
@@ -56,13 +56,13 @@ An unread cow retains an event ID while in B. Uncertain mechanical state stops a
 
 Each event records its ID, timing, occupancy and gate state, raw and de-duplicated reads, device status, decision reason, planned and actual exit, operator and edit history.
 
-Event ID and official identity remain separate. If no tag is read, identity stays blank until staff verify it; the original exception and later link remain auditable. If official visual identifiers also fail, staff follow the official procedure rather than invent a number.
+Event ID and official identity remain separate. If no tag is read, identity stays blank until staff verify it; the original exception and later link remain auditable. If official visual identifiers also fail, staff follow the official procedure, and no identity is entered without official confirmation.
 
 The farmer interface distinguishes electronically verified, pending identity review, equipment/race fault and manually resolved. It shows the active event, pen load, open cases and maintenance record, with access-controlled manual actions. A reader fault never appears as a damaged-tag diagnosis. (UR5–UR7)
 
 ## 10.6 LIS and farm-software interface
 
-Version 1 stores records locally and exports them for audit; direct LIS access is not assumed. If specifications and authorisation become available, an adapter will separate internal passages from reportable movements, validate fields, retain submissions and receipts, prevent duplicates, and reconcile after outages [1], [8], [25].
+ID-Coo stores records locally and exports them for audit; direct LIS access is not assumed. If specifications and authorisation become available, an adapter will separate internal passages from reportable movements, validate fields, retain submissions and receipts, prevent duplicates, and reconcile after outages [1], [8], [25].
 
 The interface shows locally saved, pending, failed and receipt-confirmed states. Changes to official identity and statutory submissions require human approval. (UR6, UR7)
 

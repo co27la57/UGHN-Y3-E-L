@@ -257,7 +257,7 @@ def figure2():
          "audit · review", BLUE, BLUE_S,
          title_size=12.0, detail_size=9.8)
     node(6.15, 0.55, 1.80, 1.03, "Farm software",
-         "v1 export", GREY, GREY_S,
+         "export (v1)", GREY, GREY_S,
          title_size=10.8, detail_size=9.8)
     node(8.40, 0.55, 1.65, 1.03, "Future LIS",
          "authorised only", "#ffffff", GREY_S,
@@ -270,10 +270,6 @@ def figure2():
             fontsize=9.2, color=MUTED)
     ax.text(9.23, 1.78, "later / separate interface", ha="center", va="bottom",
             fontsize=8.9, color=MUTED)
-
-    ax.text(0.35, 0.18,
-            "Functional concept only · Protective devices and required performance follow site risk assessment.",
-            fontsize=9.4, color=MUTED, ha="left", va="center", style="italic")
 
     fig.savefig(os.path.join(OUT, "fig_R10_block.png"), dpi=240,
                 bbox_inches="tight", pad_inches=0.10, facecolor="white")

@@ -65,7 +65,6 @@ rbox(230, 310, 790, 60, FLOOR, FLOOR_E, 1.0, z=1, radius=8)
 # ---------------- 2. top labels ----------------
 txt(50, 39.5, "Direction of travel", 18, MUTED, ha="left")
 arrow(265, 40, 375, 40, INK, 2.4, ms=15)
-txt(425 + 435 / 2, 39.5, "Single-file race · adjustable width", 17, MUTED, italic=True)
 
 # ---------------- 3. race chain ----------------
 rbox(50, 225, 180, 200, BLUE, BLUE_E, 2.4)
@@ -77,7 +76,7 @@ txt(280, 213, "G0", 22, INK, bold=True)
 
 rbox(330, 225, 205, 200, GREEN, GREEN_E, 2.4)
 txt(432.5, 272, "Section A", 24, GREEN_E, bold=True)
-txt(432.5, 336, "single-animal\nbuffer\nstaff-confirmed\nin v1", 17, INK)
+txt(432.5, 336, "single-animal\nbuffer\nstaff-confirmed\n(v1)", 17, INK)
 
 ax.add_patch(Rectangle((570, 235), 30, 180, facecolor=GATE, edgecolor=INK,
                        linewidth=pt(2.2), zorder=3))
@@ -143,8 +142,7 @@ txt(50, 691, "G0–G2  separating gates with process interlocks     "
 txt(50, 726, "H  review-pen entry gate     "
              "U-*  ultrasonic occupancy / passage points (planning configuration)",
     16, MUTED, ha="left")
-txt(50, 769, "Antenna mounted outside the head/ear zone. "
-             "Not to scale; final dimensions follow the on-farm survey.",
+txt(50, 769, "Antenna mounted outside the head/ear zone.",
     16, MUTED, ha="left", italic=True)
 
 OUT = "/Users/Admin/Documents/大三上/E&L/Coursework 1 - resources-20261009/08_组员资料/成员4_Part4_交付/figures/fig_R10_layout.png"

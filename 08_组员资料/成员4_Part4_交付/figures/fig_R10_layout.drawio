@@ -17,9 +17,7 @@
             <mxPoint x="375" y="40" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="race_label" value="Single-file race · adjustable width" style="text;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontColor=#5B6472;fontSize=17;fontStyle=2;" vertex="1" parent="1">
-          <mxGeometry x="425" y="22" width="435" height="35" as="geometry" />
-        </mxCell>
+        
         <mxCell id="holding" value="&lt;div style=&quot;font-size:23px;font-weight:bold;color:#185FA5;&quot;&gt;Cattle&lt;br&gt;holding&lt;br&gt;area&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=9;fillColor=#E3EDF9;strokeColor=#185FA5;strokeWidth=2.4;" vertex="1" parent="1">
           <mxGeometry x="50" y="225" width="180" height="200" as="geometry" />
         </mxCell>
@@ -29,7 +27,7 @@
         <mxCell id="G0_label" value="G0" style="text;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontColor=#1F2430;fontSize=22;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="249" y="198" width="62" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="section_A" value="&lt;div style=&quot;font-size:24px;font-weight:bold;color:#0F6E56;&quot;&gt;Section A&lt;/div&gt;&lt;div style=&quot;height:14px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:17px;color:#1F2430;line-height:1.25;&quot;&gt;single-animal&lt;br&gt;buffer&lt;br&gt;staff-confirmed&lt;br&gt;in v1&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=9;fillColor=#DCEFE7;strokeColor=#0F6E56;strokeWidth=2.4;" vertex="1" parent="1">
+        <mxCell id="section_A" value="&lt;div style=&quot;font-size:24px;font-weight:bold;color:#0F6E56;&quot;&gt;Section A&lt;/div&gt;&lt;div style=&quot;height:14px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:17px;color:#1F2430;line-height:1.25;&quot;&gt;single-animal&lt;br&gt;buffer&lt;br&gt;staff-confirmed&lt;br&gt;(v1)&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=9;fillColor=#DCEFE7;strokeColor=#0F6E56;strokeWidth=2.4;" vertex="1" parent="1">
           <mxGeometry x="330" y="225" width="205" height="200" as="geometry" />
         </mxCell>
         <mxCell id="G1" value="" style="rounded=1;arcSize=5;whiteSpace=wrap;html=1;fillColor=#5F5E5A;strokeColor=#1F2430;strokeWidth=2.2;" vertex="1" parent="1">
@@ -134,7 +132,7 @@
         <mxCell id="legend_sensors" value="H  review-pen entry gate     U-*  ultrasonic occupancy / passage points (planning configuration)" style="text;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#5B6472;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="50" y="712" width="1240" height="28" as="geometry" />
         </mxCell>
-        <mxCell id="scope_note" value="Antenna mounted outside the head/ear zone. Not to scale; final dimensions follow the on-farm survey." style="text;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#5B6472;fontSize=16;fontStyle=2;" vertex="1" parent="1">
+        <mxCell id="scope_note" value="Antenna mounted outside the head/ear zone." style="text;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#5B6472;fontSize=16;fontStyle=2;" vertex="1" parent="1">
           <mxGeometry x="50" y="755" width="1390" height="28" as="geometry" />
         </mxCell>
         <mxCell id="manual_exit_arrow" value="" style="edgeStyle=none;rounded=0;html=1;strokeColor=#993556;strokeWidth=2.6;startArrow=none;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="review_pen">

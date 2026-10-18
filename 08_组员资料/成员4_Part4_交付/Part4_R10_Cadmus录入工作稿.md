@@ -13,13 +13,13 @@
 
 【改写点】这句是全文门面，务必换成你自己的说法，例如把 "staff confirm single-animal entry from outside the race" 换成你描述分流方案时的习惯用语。
 
-> Prepared for the line manager. Version 1 is a concept design: staff confirm single-animal entry from outside the race; the system then reads, decides and diverts automatically. Nothing is yet validated on farm — Section 10.7 defines what must be proven before sale. Neither figure is a construction drawing.
+> Prepared for the line manager. ID-Coo (Version 1) is a concept design: staff confirm single-animal entry from outside the race; the system then reads, decides and diverts automatically. Nothing is yet validated on farm — Section 10.7 defines what must be proven before sale. Neither figure is a construction drawing.
 
 ## 10.1 Physical structure（2 段 + 图 1）
 
 【改写点】HF 体型那句是我们刚补的，务必用你自己的话组织数字；"guide boundary only and never pushes or squeezes" 是方案灵魂句，确认你认同再敲；新增的福利结构句（防滑排水、无尖锐突出物等）和"不默认固定牛头"是本轮补的，敲之前确认你理解每一条对应《牛只分流方案》哪条设计要求。
 
-> Animals travel through a single-file race: holding area → gate G0 → buffer section A → gate G1 → detection section B → gate G2 → diversion area with gate D (Figure 1). After reading, gate D selects one of two exits: the normal return channel, or the exception branch through pen gate H to the review pen. All animals leave B moving forward; D forms a guide boundary only and never pushes or squeezes an animal. Version 1 uses one buffer and one detection section; extra forward sections add waiting capacity, not throughput, and add gates and failure points. Adjustable commercial alleys (≈526–800 mm wide, 8 ft and 10 ft modules) indicate the structural envelope [13], [14]; an alley stop may assist backing control but never replaces the separating gate. Section length, clear width and antenna height follow CIGR dimensions for the target breed — adult Holstein–Friesian cows stand ≈1.4 m at the withers (CIGR 1.44 m at 650–749 kg [25]; field mean 1.41 m from 1,054 cows [26]), with body length ≈1.71–1.75 m and chest width ≈0.60 m [25], [26]; another breed means re-parameterising the same tables, not redesigning. Final dimensions and door swings come from the on-farm survey; module length is never assumed to equal one animal's length. The structure is designed for handling welfare — anti-slip drainage, no sharp projections, guarded tracks and hinges, head-neck and leg clearances, a continuous exit boundary and operating positions outside the pen [9]; head restraint stays a reference option, as the design does not assume head fixing. (UR8, UR9)
+> Animals travel through a single-file race: holding area → gate G0 → buffer section A → gate G1 → detection section B → gate G2 → diversion area with gate D (Figure 1). After reading, gate D selects one of two exits: the normal return channel, or the exception branch through pen gate H to the review pen. All animals leave B moving forward; D forms a guide boundary only and never pushes or squeezes an animal. ID-Coo uses one buffer and one detection section; extra forward sections add waiting capacity, not throughput, and add gates and failure points. Adjustable commercial alleys (≈526–800 mm wide, 8 ft and 10 ft modules) indicate the structural envelope [13], [14]; an alley stop may assist backing control but never replaces the separating gate. Section length, clear width and antenna height follow CIGR dimensions for the target breed — adult Holstein–Friesian cows stand ≈1.4 m at the withers (CIGR 1.44 m at 650–749 kg [25]; field mean 1.41 m from 1,054 cows [26]), with body length ≈1.71–1.75 m and chest width ≈0.60 m [25], [26]; another breed means re-parameterising the same tables, not redesigning. Final dimensions and door swings come from the on-farm survey; module length is never assumed to equal one animal's length. The structure is designed for handling welfare — anti-slip drainage, no sharp projections, guarded tracks and hinges, head-neck and leg clearances, a continuous exit boundary and operating positions outside the pen [9]; head restraint stays a reference option, as the design does not assume head fixing. (UR8, UR9)
 
 > The review pen is a temporary holding area for manual verification, not a disease-isolation facility. It has an independent anti-return entry and a separate manual handling exit; gate H closes only after an animal has fully passed; when the pen is full or the branch blocked, intake stops and upstream pauses. Staff operate the pen gate from outside, with safe handling space. Capacity follows C ≥ λq × th + Cm (anomaly rate × handling interval + margin) — an average-load relation, so full-pen monitoring stays mandatory for consecutive anomalies. The budget scenario reuses an existing pen of about six head; as a floor, a sorting pen should hold at least one side of the milking parlour, with water, feed and lying space [25].
 
@@ -60,7 +60,7 @@
 | PLC → gate drives | Open, close or stop motion requests |
 | Safety-related control → gate drives | Independent stop or inhibit |
 | PLC ↔ local log and HMI | Events and device status; authorised operator actions as process requests |
-| Local log and HMI → farm software | Audited export in version 1 |
+| Local log and HMI → farm software | Audited export in Version 1 |
 
 **图 2 — Functional control, safety and data interfaces**（插图 + 图注一行）
 
@@ -68,7 +68,7 @@
 
 引言句：
 
-> A rule-based state machine runs each passage as an independent event; no machine learning is required in version 1.
+> A rule-based state machine runs each passage as an independent event; no machine learning is required in Version 1.
 
 状态机表（3 列 × 9 行）：
 
@@ -86,7 +86,7 @@
 
 【改写点】这里列的是通行顺序的**过程联锁**，不能将其表述成已经验证的安全功能。保留三项关键意思：延迟结果不作用于下一头；过程联锁不保证首次单头；取消人工确认前要验证自动分隔、防夹与异常处理，并计入人员时间。
 
-> Process interlocks: G0 and G1 are never open together, nor G1 and G2; scanning starts only when both are confirmed closed, the animal is in the read zone and no following is suspected; D must be in position before G2 opens; the exit never switches while an animal occupies D's travel; an animal is never assumed to have left on a timer. Late results from a finished event stay in the log and never act on the next animal. These process interlocks alone do not guarantee a single first entry — first entry and following separation are validated separately. Staff confirmation of single-animal entry is removed only after automatic separation, anti-pinch and exception handling are validated; version 1 economics include staff time.
+> Process interlocks: G0 and G1 are never open together, nor G1 and G2; scanning starts only when both are confirmed closed, the animal is in the read zone and no following is suspected; D must be in position before G2 opens; the exit never switches while an animal occupies D's travel; an animal is never assumed to have left on a timer. Late results from a finished event stay in the log and never act on the next animal. These process interlocks alone do not guarantee a single first entry — first entry and following separation are validated separately. Staff confirmation of single-animal entry is removed only after automatic separation, anti-pinch and exception handling are validated; Version 1 economics include staff time.
 
 分流表（2 列 × 5 行）：
 
@@ -110,7 +110,7 @@
 
 【改写点】整段较短，建议整段自己重述——关键词：local export、adaptation layer、internal passage vs reportable movements、receipts、offline cache。
 
-> Version 1 stores locally and produces audited exports; no direct LIS connection is claimed. Once the interface specification and authorisation exist, an adaptation layer will separate internal passage from reportable movements, validate numbers and fields, keep submissions and receipts, prevent duplicates, and cache offline submissions [1], [4], [5]. The interface distinguishes locally saved, to-report, submit-failed and receipt-confirmed; changing an existing official identity or filing a statutory report keeps a human approval step. (UR6, UR7)
+> ID-Coo stores locally and produces audited exports; no direct LIS connection is claimed. Once the interface specification and authorisation exist, an adaptation layer will separate internal passage from reportable movements, validate numbers and fields, keep submissions and receipts, prevent duplicates, and cache offline submissions [1], [4], [5]. The interface distinguishes locally saved, to-report, submit-failed and receipt-confirmed; changing an existing official identity or filing a statutory report keeps a human approval step. (UR6, UR7)
 
 ## 10.7 Pricing, throughput and validation（2 段 + 1 表）
 
