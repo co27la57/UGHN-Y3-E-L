@@ -27,7 +27,7 @@
         <mxCell id="G0_label" value="G0" style="text;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontColor=#1F2430;fontSize=22;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="249" y="198" width="62" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="section_A" value="&lt;div style=&quot;font-size:24px;font-weight:bold;color:#0F6E56;&quot;&gt;Section A&lt;/div&gt;&lt;div style=&quot;height:14px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:17px;color:#1F2430;line-height:1.25;&quot;&gt;single-animal&lt;br&gt;buffer&lt;br&gt;staff-confirmed&lt;br&gt;(v1)&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=9;fillColor=#DCEFE7;strokeColor=#0F6E56;strokeWidth=2.4;" vertex="1" parent="1">
+        <mxCell id="section_A" value="&lt;div style=&quot;font-size:24px;font-weight:bold;color:#0F6E56;&quot;&gt;Section A&lt;/div&gt;&lt;div style=&quot;height:14px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size:17px;color:#1F2430;line-height:1.25;&quot;&gt;single-animal&lt;br&gt;buffer&lt;br&gt;machine-verified&lt;/div&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=9;fillColor=#DCEFE7;strokeColor=#0F6E56;strokeWidth=2.4;" vertex="1" parent="1">
           <mxGeometry x="330" y="225" width="205" height="200" as="geometry" />
         </mxCell>
         <mxCell id="G1" value="" style="rounded=1;arcSize=5;whiteSpace=wrap;html=1;fillColor=#5F5E5A;strokeColor=#1F2430;strokeWidth=2.2;" vertex="1" parent="1">
